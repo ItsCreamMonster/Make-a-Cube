@@ -1,0 +1,8 @@
+# ignore 'deprecated' directory
+deprecated/
+
+# ignore 'design' directory
+design/
+
+# ignore 'js.cookie.js'
+js.cookie.js

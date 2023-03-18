@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Made by Cream Monster -->
+    <!-- https://github.com/ItsCreamMonster/Make-a-Cube -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make-a-Cube</title>
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+    
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+
+    <script defer src="scripts/js.cookie.js"></script>
+</head>
+<body>
+    <div class="theme" style="display:none;">
+        <button class="darkActivated-btn" style="display:none;" onclick="setLightMode()">
+            <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.23129 2.24048C9.24338 1.78695 10.1202 2.81145 9.80357 3.70098C8.72924 6.71928 9.38932 10.1474 11.6193 12.3765C13.8606 14.617 17.3114 15.2755 20.3395 14.1819C21.2206 13.8637 22.2173 14.7319 21.7817 15.7199C21.7688 15.7491 21.7558 15.7782 21.7427 15.8074C20.9674 17.5266 19.7272 19.1434 18.1227 20.2274C16.4125 21.3828 14.3957 22.0001 12.3316 22.0001H12.3306C9.93035 21.9975 7.6057 21.1603 5.75517 19.6321C3.90463 18.1039 2.64345 15.9797 2.18793 13.6237C1.73241 11.2677 2.11094 8.82672 3.2586 6.71917C4.34658 4.72121 6.17608 3.16858 8.20153 2.25386L8.23129 2.24048Z" fill="#323232"></path> </g>
+            </svg>
+        </button>
+        <button class="lightActivated-btn" onclick="setDarkMode()">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C12.5523 2 13 2.44772 13 3V5C13 5.55228 12.5523 6 12 6C11.4477 6 11 5.55228 11 5V3C11 2.44772 11.4477 2 12 2Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L17.7071 7.70711C17.3166 8.09763 16.6834 8.09763 16.2929 7.70711C15.9024 7.31658 15.9024 6.68342 16.2929 6.29289L18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M18 12C18 11.4477 18.4477 11 19 11H21C21.5523 11 22 11.4477 22 12C22 12.5523 21.5523 13 21 13H19C18.4477 13 18 12.5523 18 12Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2929 16.2929C16.6834 15.9024 17.3166 15.9024 17.7071 16.2929L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L16.2929 17.7071C15.9024 17.3166 15.9024 16.6834 16.2929 16.2929Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C12.5523 18 13 18.4477 13 19V21C13 21.5523 12.5523 22 12 22C11.4477 22 11 21.5523 11 21V19C11 18.4477 11.4477 18 12 18Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70711 16.2929C8.09763 16.6834 8.09763 17.3166 7.70711 17.7071L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L6.29289 16.2929C6.68342 15.9024 7.31658 15.9024 7.70711 16.2929Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 11.4477 2.44772 11 3 11H5C5.55228 11 6 11.4477 6 12C6 12.5523 5.55228 13 5 13H3C2.44772 13 2 12.5523 2 12Z" fill="#f0f0f0"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L7.70711 6.29289C8.09763 6.68342 8.09763 7.31658 7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289Z" fill="#f0f0f0"></path> </g>
+            </svg>
+        </button>
+    </div>
+     
+    <div class="title">
+        <h1>Make-a-Cube</h1>
+        <h2>Make your own cube!</h2>
+    </div>
+
+    <div class="cube"></div>
+
+    <span id="notification" style="display:none;">Restored to previously made cube.</span>
+
+    <div class="customization">
+        <h3>Customization</h3>
+        <div class="option">
+            <label for="color">Color:</label>
+            <input id="color" type="color" value="#ffffff">
+        </div>
+        <div class="option">
+            <label for="border-radius">Border radius:</label>
+            <input id="border-radius" type="text" placeholder="20px">
+        </div>
+        <div class="option">
+            <label for="border">Border:</label>
+            <input id="border" type="text" placeholder="3px solid #000000">
+        </div>
+        <div class="option">
+            <label for="box-shadow">Box shadow:</label>
+            <input id="box-shadow" type="text" placeholder="0px 0px 28px #000">
+        </div>
+
+        <button class="reset-btn" onclick="reset()">Reset</button>
+    </div>
+
+    <div class="advanced customization">
+        <h3>Advanced</h3>
+        <button id="showAdvanced" class="advanced-btn" onclick="showAdvanced()">Show</button>
+        <button id="hideAdvanced" class="advanced-btn" onclick="hideAdvanced()" style="display:none;">Hide</button>
+        <div class="advancedOptions" style="display:none;">
+            <h4>Hover</h4>
+            <div class="option">
+                <label for="">More to come...</label>
+            </div>
+            <h4>Misc.</h4>
+            <div class="option">
+                <label for="cursor">Cursor:</label>
+                <select id="cursor" name="cursor">
+                    <option value="default">Default</option>
+                    <option value="pointer">Pointer</option>
+                    <option value="progress">Progress</option>
+                    <option value="text">Text</option>
+                    <option value="wait">Wait</option>
+                    <option value="not-allowed">Not Allowed</option>
+                    <option value="no-drop">No Drop</option>
+                    <option value="cell">Cell</option>
+                    <option value="crosshair">Crosshair</option>
+                    <option value="all-scroll">All Scroll</option>
+                    <option value="grab">Grab</option>
+                    <option value="grabbing">Grabbing</option>
+                    <option value="help">Help</option>
+                    <option value="zoom-in">Zoom In</option>
+                    <option value="zoom-out">Zoom Out</option>
+                    <option value="move">Move</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="transition">Transition:</label>
+                <input id="transition" type="text" placeholder="all 0.2s ease-in-out">
+            </div>
+            <div class="option">
+                <label for="gradient">Gradient:</label>
+                <input id="gradient" type="text" placeholder="to right, #000000, #ffffff" disabled>
+            </div>
+        </div>
+    </div>
+
+    <div class="utilityButtons">
+        <!-- <button class="sourceCode-btn" onclick="window.location.href='https://github.com/itscreammonster/make-a-cube'" title="github.com/itscreammonster/make-a-cube">Source Code</button> -->
+        <button class="sourceCode-btn" onclick="window.location.href='https://github.com/itscreammonster/make-a-cube'" title="github.com/itscreammonster/make-a-cube">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 16L13 8" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round"></path> <path d="M17 15L19.6961 12.3039V12.3039C19.8639 12.1361 19.8639 11.8639 19.6961 11.6961V11.6961L17 9" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7 9L4.32151 11.6785V11.6785C4.14394 11.8561 4.14394 12.1439 4.32151 12.3215V12.3215L7 15" stroke="#f0f0f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+            </svg>
+        </button>
+    </div>
+
+    <div class="cookieMenu" style="display:none;">
+        <h2 id="cookieTitle">This site uses cookies!</h2>
+        <span id="cookieDesc">This site uses cookies, please accept them for the best experience. They are only for storing your cube data and they get deleted after 24 hours.</span>
+        <button id="cookieGotIt-btn" onclick="acceptCookies()">Got it!</button>
+    </div>
+</body>
+</html>
