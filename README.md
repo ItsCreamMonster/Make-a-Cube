@@ -6,9 +6,19 @@ Make-a-Cube is a website that will give you the ability to create a cube vizuall
 
 With Make-a-Cube, you can create a square/cube visually instead of having to use CSS. It's still basically just CSS but with input boxes on a website to change the properties. Here is a list of some of the features/properties you can change and use: 
 - **Color**
-    - Modifies the background-color property of the cube. *For simpicity, this is a color input which therefore can not do more advanced backgrounds.*
+    - Modifies the *background-color* property of the cube. *For simpicity, this is a color input which therefore can not do more advanced backgrounds.*
 - **Border Radius**
-    - Modifies the border-radius property of the cube, since it's just CSS, rem and other units than pixels will work if you know how to use them.
+    - Modifies the *border-radius* property of the cube, since it's just CSS, rem and other units than pixels will work if you know how to use them.
+- **Border**
+    - Modifies the *border* property of the cube.
+- **Box Shadow**
+    - Modifies the *box-shadow* property. 
+- **Cursor** *[Advanced]*
+    - Changes the cursor type when hovered. **<u>Does not</u>** include all types.
+- **Transition** *[Advanced]*
+    - Changes modifications affected by transitions, transition time and lastly easing.
+- **Embedding**
+    - Get the code you made and copy it to your own project. *(Why would you even need a basic square in project?)*
 
 ## Usage
 
@@ -31,6 +41,17 @@ So with that, maybe an hour later I created this project. This has been the firs
 
 I think my favorite part about making websites is probably the styling, so that's why I created this! I thought that I'd get to style the different elements as much as I really wanted to and also learn some basic JavaScript on the way. This may just be my favorite creation yet and I really hope you like it!
 
+## Third-party Code & Help
+
+Thanks to the authors and contributors for the code below! Without these, this project wouldn't be the same!
+
+- **Highlight JS** - *([Website](https://highlightjs.org))*
+    - To make the output code highlighted
+- **Dracula Theme** - *([Website](https://draculatheme.com/highlightjs))*
+    - Style theme for Highlight JS
+- **SVG Repo** - *([Website](https://svgrepo.com))*
+    - To get svg icons for buttons
+
 ## Support
 
-If you need any help or have any questions, you can kindly contact me through ```contact.creammonster[at]gmail.com``` and I'll be happy to help.
+If you need any help or have any questions, you can kindly contact me through ```contact.creammonster[at]gmail.com``` and I'll be happy to help. 
