@@ -6,3 +6,6 @@ design/
 
 # ignore 'js.cookie.js'
 js.cookie.js
+
+# ignore files with '.old' extension
+*.old
